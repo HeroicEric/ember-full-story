@@ -1,6 +1,6 @@
 {
   "name": "ember-full-story",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An Ember CLI addon for integrating with fullstory.com",
   "directories": {
     "doc": "doc",
