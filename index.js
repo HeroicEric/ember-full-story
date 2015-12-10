@@ -1,18 +1,20 @@
 /* jshint node: true */
 'use strict';
 
-function fsValidateConfig(config) {
-  if (!config.org) {
-    throw new Error('ember-full-story requires an org to be configured.');
+function fsValidateConfig(addonConfig) {
+  if (!addonConfig['org']) {
+    throw new Error("ember-full-story requires ENV['ember-full-story']['org'] to be set when enabled.");
   }
 }
 
-function fsRecordingSnipppet(config) {
+function fsRecordingSnipppet(addonConfig) {
+  var org = addonConfig['org'];
+
   return [
     "<script>",
     "window['_fs_debug'] = false;",
     "window['_fs_host'] = 'www.fullstory.com';",
-    "window['_fs_org'] = '" + config.org + "';",
+    "window['_fs_org'] = '" + org + "';",
     "(function(m,n,e,t,l,o,g,y){",
     "  g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];",
     "  o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';",
@@ -30,10 +32,12 @@ module.exports = {
   name: 'ember-full-story',
 
   contentFor: function(type, config) {
-    if (type === 'head-footer') {
-      fsValidateConfig(config);
+    var addonConfig = config['ember-full-story'];
 
-      return fsRecordingSnippet(config);
+    if (type === 'head-footer' && addonConfig['enabled']) {
+      fsValidateConfig(addonConfig);
+
+      return fsRecordingSnipppet(addonConfig);
     }
   }
 };
