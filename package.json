@@ -1,7 +1,7 @@
 {
   "name": "ember-full-story",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An Ember CLI addon for integrating with fullstory.com",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/HeroicEric/ember-full-story",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Eric Kelly and contributors",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -38,7 +38,8 @@
     "ember-try": "~0.0.8"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "fullstory"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5"
