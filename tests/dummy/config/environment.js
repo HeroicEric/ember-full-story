@@ -23,6 +23,14 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-full-story'] = {
+    debug: true,
+    enabledEnvironments: ['development', 'test'],
+    host: 'testHost',
+    namespace: 'testNamespace',
+    org: 'testOrg'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
