@@ -17,7 +17,7 @@ It looks something like the following:
 
 ```javascript
 window['_fs_org'] = 'XXXXX';
-``
+```
 
 ## Configuration
 
