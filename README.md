@@ -1,27 +1,38 @@
 # ember-full-story
 
-This README outlines the details of collaborating on this Ember addon.
+This addon inserts the [FullStory][full-story] recording script into the
+`<head>` of the page for you.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-full-story`
-* `npm install`
-* `bower install`
+```
+ember install ember-full-story
+```
 
-## Running
+After installing the addon, you **MUST** provide a configuration value for your
+org. You can find it in the settings tab on your [FullStory][full-story] dashboard,
+inside the recording script.
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+It looks something like the following:
 
-## Running Tests
+```javascript
+window['_fs_org'] = 'XXXXX';
+``
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+## Configuration
 
-## Building
+You can configure some of the variables used in the inserted recording script.
 
-* `ember build`
+```
+// config/environment.js
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+ENV['ember-full-story'] = {
+  debug: false,                        // default
+  enabledEnvironments: ['production'], // default
+  host: 'www.fullstory.com',           // default
+  namespace: 'FS',                     // default
+  org: 'YourOrg'                       // required, no default
+};
+```
+
+[full-story]: https://fullstory.com/
