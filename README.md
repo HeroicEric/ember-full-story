@@ -23,7 +23,7 @@ window['_fs_org'] = 'XXXXX';
 
 You can configure some of the variables used in the inserted recording script.
 
-```
+```javascript
 // config/environment.js
 
 ENV['ember-full-story'] = {
