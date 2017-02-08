@@ -17,7 +17,7 @@ let SCRIPT_BODY = `
 })(window,document,window['_fs_namespace'],'script','user');
 `;
 
-test('visiting /content-for', function(assert) {
+test('the recording script is inserted into the document head', function(assert) {
   visit('/');
 
   andThen(function() {
