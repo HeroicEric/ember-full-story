@@ -21,27 +21,32 @@ test('the recording script is inserted into the document head', function(assert)
   visit('/');
 
   andThen(function() {
-    let head = document.getElementsByTagName('head')[0].innerHTML;
+    let head = document.head.innerHTML;
 
-    assert.ok(
-      head.includes(SCRIPT_BODY),
+    assert.notEqual(
+      head.indexOf(SCRIPT_BODY),
+      -1,
       'script body is included'
     );
-    assert.ok(
-      head.includes(`window['_fs_debug'] = true;`),
-      'includes debug value'
+    assert.notEqual(
+      head.indexOf(`window['_fs_debug'] = true;`),
+      -1,
+      'indexOf debug value'
     );
-    assert.ok(
-      head.includes(`window['_fs_org'] = 'testOrg';`),
+    assert.notEqual(
+      head.indexOf(`window['_fs_org'] = 'testOrg';`),
+      -1,
       'include org value'
     );
-    assert.ok(
-      head.includes(`window['_fs_host'] = 'testHost';`),
-      'includes host value'
+    assert.notEqual(
+      head.indexOf(`window['_fs_host'] = 'testHost';`),
+      -1,
+      'indexOf host value'
     );
-    assert.ok(
-      head.includes(`window['_fs_namespace'] = 'testNamespace';`),
-      'includes namespace value'
+    assert.notEqual(
+      head.indexOf(`window['_fs_namespace'] = 'testNamespace';`),
+      -1,
+      'indexOf namespace value'
     );
   });
 });
