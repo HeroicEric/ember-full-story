@@ -1,13 +1,9 @@
 import { moduleFor, test } from 'ember-qunit';
 import sinon from 'sinon';
 
-moduleFor('service:full-story', 'Unit | Service | full story', {
-  // Specify the other units that are required for this test.
-  // needs: ['service:foo']
-});
+moduleFor('service:full-story', 'Unit | Service | full story');
 
-// Replace this with your real tests.
-test('it exists', function(assert) {
+test('#identify', function(assert) {
   const identifySpy = sinon.spy();
 
   const oldFS = window.FS;
@@ -23,6 +19,29 @@ test('it exists', function(assert) {
 
   assert.ok(
     identifySpy.calledWithExactly(123, {
+      someProp: 'abc'
+    })
+  );
+
+  window.FS = oldFS;
+});
+
+test('#setUserVars', function(assert) {
+  const setUserVarsSpy = sinon.spy();
+
+  const oldFS = window.FS;
+  window.FS = {
+    setUserVars: setUserVarsSpy
+  };
+
+  let service = this.subject();
+
+  service.setUserVars({
+    someProp: 'abc'
+  });
+
+  assert.ok(
+    setUserVarsSpy.calledWithExactly({
       someProp: 'abc'
     })
   );

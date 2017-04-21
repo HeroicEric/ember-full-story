@@ -1,8 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  identify(userId, props = {}) {
-    console.log(window.FS);
-    window.FS.identify(userId, props);
+  identify(userId, userVars = {}) {
+    window.FS.identify(userId, userVars);
+  },
+  setUserVars(userVars = {}) {
+    window.FS.setUserVars(userVars);
   }
 });
