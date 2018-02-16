@@ -28,7 +28,7 @@ module.exports = function(environment) {
     enabledEnvironments: ['development', 'test'],
     host: 'testHost',
     namespace: 'testNamespace',
-    org: 'AJ7FJ'
+    org: 'testOrg'
   };
 
   if (environment === 'development') {
