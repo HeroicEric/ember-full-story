@@ -36,3 +36,33 @@ ENV['ember-full-story'] = {
 ```
 
 [full-story]: https://fullstory.com/
+
+
+## Service
+
+Inject the `fullStory` service to access the Full Story javascript api.
+
+Usage:
+```js
+ fullStory: service(),
+
+ exampleMethod() {
+   this.get('fullStory').identify('userID');
+ }
+```
+
+Available Properties
+- `fsHost`
+- `fsOrg`
+- `fsLoaded`
+- `fsNamespace`
+
+
+Available Methods
+
+- `identify()`
+- `setUserVars()`
+- `restart()`
+- `shutdown()`
+- `getCurrentSessionURL`
+- `log()`

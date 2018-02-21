@@ -29,7 +29,7 @@ test('Method names calls underlying full story method', function(assert) {
       userspy = sinon.spy();
 
   window.FS = {
-    setUserVars: userspy;
+    setUserVars: userspy
   };
 
   let props = {foo: "bsar"};
