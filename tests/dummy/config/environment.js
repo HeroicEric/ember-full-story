@@ -52,7 +52,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    // Add stuff here
   }
 
   return ENV;
