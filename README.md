@@ -1,17 +1,19 @@
-# ember-full-story
+ember-full-story
+==============================================================================
 
 This addon inserts the [FullStory][full-story] recording script into the
 `<head>` of the page for you.
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 ```
 ember install ember-full-story
 ```
 
 After installing the addon, you **MUST** provide a configuration value for your
-org. You can find it in the settings tab on your [FullStory][full-story] dashboard,
-inside the recording script.
+org. You can find it in the settings tab on your [FullStory][full-story]
+dashboard, inside the recording script.
 
 It looks something like the following:
 
@@ -19,7 +21,8 @@ It looks something like the following:
 window['_fs_org'] = 'XXXXX';
 ```
 
-## Configuration
+Usage
+------------------------------------------------------------------------------
 
 You can configure some of the variables used in the inserted recording script.
 
@@ -34,5 +37,10 @@ ENV['ember-full-story'] = {
   org: 'YourOrg'                       // required, no default
 };
 ```
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
 
 [full-story]: https://fullstory.com/
