@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 
 function fsValidateConfig(addonConfig) {
@@ -30,9 +29,9 @@ function fsRecordingSnipppet(addonConfig) {
 }
 
 module.exports = {
-  name: 'ember-full-story',
+  name: require('./package').name,
 
-  config: function(/* environment, appConfig */) {
+  config(/* environment, appConfig */) {
     return {
       'ember-full-story': {
         debug: false,
@@ -43,7 +42,7 @@ module.exports = {
     };
   },
 
-  contentFor: function(type, config) {
+  contentFor(type, config) {
     var environment = config['environment'];
     var addonConfig = config['ember-full-story'];
     var shouldInsertFs = addonConfig['enabledEnvironments'].indexOf(environment) > -1;
