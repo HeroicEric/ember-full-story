@@ -24,6 +24,7 @@ module.exports = function(environment) {
   };
 
   ENV['ember-full-story'] = {
+    runInIframe: true,
     debug: true,
     enabledEnvironments: ['development', 'test'],
     host: 'testHost',
