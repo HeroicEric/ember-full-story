@@ -7,14 +7,10 @@ function fsValidateConfig(addonConfig) {
 }
 
 function fsRecordingSnipppet(addonConfig) {
-  let isInIframe = false;
-  if (window.parent !== window) {
-    isInIframe = true;
-  }
 
   return [
     "<script>",
-    "window['_fs_is_outer_script] = " + isInIframe && addonConfig.runInIframe + ";" ,
+    "window['_fs_is_outer_script'] = " + addonConfig.runInIframe + ";" ,
     "window['_fs_debug'] = " + addonConfig.debug + ";",
     "window['_fs_host'] = '" + addonConfig.host + "';",
     "window['_fs_org'] = '" + addonConfig.org + "';",
