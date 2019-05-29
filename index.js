@@ -7,7 +7,6 @@ function fsValidateConfig(addonConfig) {
 }
 
 function fsRecordingSnipppet(addonConfig) {
-
   return [
     "<script>",
     "window['_fs_is_outer_script'] = " + addonConfig.runInIframe + ";" ,
